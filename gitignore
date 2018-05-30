@@ -1,0 +1,14 @@
+/.gitattributes
+/.gitignore
+/.htaccess
+/wp-config.php
+/wp-content/uploads/
+/wp-content/ai1wm-backups/
+/*.txt
+/*.html
+*.zip
+*.gz
+*.tar
+*.bz
+*.7z
+*.rar
