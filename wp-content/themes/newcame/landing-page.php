@@ -132,54 +132,7 @@ if ($background_image && $message_title && $message_body){
   <!-- //services-bottom -->
   <!---728x90--->
   <!-- blog -->
-<?php
-$blog_title = get_field("blog_title");
-if ($blog_title){
-  ?>
-  <div class="blog">
-    <div class="container">
-      <div class="services-heading">
-        <h3><?php echo $blog_title; ?></h3>
-        <div class="agileits-line"> </div>
-      </div>
-      <div class="agileinfo-blog-grids">
-        <?php
-        wp_reset_postdata();
-        wp_reset_query();
-        $args = array(
-            'posts_per_page' => 1,
-            'post_type' => 'post',
-            'post_status' => 'publish',
-        );
-        $post = new WP_Query($args);
-//        print_r($post);
-        if ($post->have_posts()){
-          while ($post->have_posts()){
-            $post->the_post();
-            ?>
-            <div class="col-md-4 wthree-blog">
-              <div class="w3-agileits-blog">
-                <div class="w3-agileits-blog-img">
-                  <a href="<?php the_permalink(); ?>">
-                    <img src="<?php the_post_thumbnail_url('post-thumbnail'); ?>" alt="" />
-                  </a>
-                </div>
-                <div class="w3-agileits-blog-text">
-                  <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                  <?php the_excerpt(); ?>
-                </div>
-              </div>
-            </div>
-            <?php
-          }
-          wp_reset_postdata();
-        }
-        ?>
-        <div class="clearfix"> </div>
-      </div>
-    </div>
-  </div>
+
   <!-- //blog -->
-  <?php
-}
+<?php
 get_footer();
