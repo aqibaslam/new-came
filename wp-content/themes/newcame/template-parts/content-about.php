@@ -1,19 +1,3 @@
-<!-- banner -->
-<?php
-$banner_background_image = get_field("banner_background_image");
-$banner_title = get_field("banner_title");
-if ($banner_background_image && $banner_title){
-  ?>
-  <div class="banner about-banner" style="background: url('<?php echo $banner_background_image; ?>') no-repeat 0px -185px;">
-    <div class="container">
-      <h2><?php echo $banner_title; ?></h2>
-      <div class="agileits-line"> </div>
-    </div>
-  </div>
-  <!-- //banner -->
-  <?php
-}
-?>
 <!-- feature-grid -->
 <div class="feature-grid">
   <div class="container">
