@@ -326,7 +326,7 @@ ul.dropdown-menu {
 }
 /*-- //banner --*/
 /*-- services --*/
-.services,.text-grid,.blog,.footer,.about-top,.feature-grid,.team,.gallery,.codes,.typography,.contact-top{
+.services,.text-grid,.blog,.footer,.about-top,.feature-grid,.team,.codes,.typography,.contact-top{
   padding: 5em 0em;
 }
 .services-heading {
@@ -645,7 +645,6 @@ ul.agileinfo_footer_grid_list {
   min-height: 0 !important;
   text-align: center;
   padding: 4em 0;
-  background: url(../images/1.jpg) no-repeat 0px -245px !important;
   background-size: cover !important;
   -webkit-background-size: cover !important;
   -moz-background-size: cover !important;
@@ -995,6 +994,29 @@ figure.effect-roxy:hover p {
   -webkit-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
   line-height: 1.8em;
+}
+
+#myBtnContainer{
+  margin: 1em auto;
+}
+
+#myBtnContainer .btn{
+  border: 1px solid;
+  border-radius: 50px;
+  outline: none;
+  padding: 12px 16px;
+  margin: 15px 5px;
+  background-color: white;
+  cursor: pointer;
+}
+
+#myBtnContainer .btn:hover {
+  background-color: #ddd;
+}
+
+#myBtnContainer .btn.active {
+  background-color: #aebe27;
+  color: white;
 }
 /*-- //gallery --*/
 /*-- icons --*/
