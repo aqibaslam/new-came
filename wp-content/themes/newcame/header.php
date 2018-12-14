@@ -16,6 +16,7 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="Farming Company Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <link href="<?php bloginfo('template_url'); ?>/assets/css/mystyle.css" rel="stylesheet" type="text/css">
 
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
@@ -47,12 +48,7 @@
                         <li class="active"><a href="index.html">Home</a></li>
                         <li><a href="about.html" class="hvr-sweep-to-bottom">About</a></li>
                         <li><a href="gallery.html" class="hvr-sweep-to-bottom">Gallery</a></li>
-                        <li><a href="#" class="dropdown-toggle hvr-sweep-to-bottom" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Codes<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a class="hvr-sweep-to-bottom" href="icons.html">Icons</a></li>
-                                <li><a class="hvr-sweep-to-bottom" href="typography.html">Typography</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="products.html" class="hvr-sweep-to-bottom">Products</a></li>
                         <li><a href="mail.html" class="hvr-sweep-to-bottom">Mail Us</a></li>
                     </ul>
                 </nav>
