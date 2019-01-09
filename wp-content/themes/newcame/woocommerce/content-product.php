@@ -24,7 +24,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 ?>
-<li <?php wc_product_class(); ?>>
+<li <?php wc_product_class(); ?> >
 	<?php
 	/**
 	 * Hook: woocommerce_before_shop_loop_item.
@@ -46,22 +46,26 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	 *
 	 * @hooked woocommerce_template_loop_product_title - 10
 	 */
-	do_action( 'woocommerce_shop_loop_item_title' );
-
-	/**
-	 * Hook: woocommerce_after_shop_loop_item_title.
-	 *
-	 * @hooked woocommerce_template_loop_rating - 5
-	 * @hooked woocommerce_template_loop_price - 10
-	 */
-	do_action( 'woocommerce_after_shop_loop_item_title' );
-
-	/**
-	 * Hook: woocommerce_after_shop_loop_item.
-	 *
-	 * @hooked woocommerce_template_loop_product_link_close - 5
-	 * @hooked woocommerce_template_loop_add_to_cart - 10
-	 */
-	do_action( 'woocommerce_after_shop_loop_item' );
 	?>
+	<div class="product-caption">
+		<?php
+		do_action( 'woocommerce_shop_loop_item_title' );
+
+		/**
+		 * Hook: woocommerce_after_shop_loop_item_title.
+		 *
+		 * @hooked woocommerce_template_loop_rating - 5
+		 * @hooked woocommerce_template_loop_price - 10
+		 */
+		do_action( 'woocommerce_after_shop_loop_item_title' );
+
+		/**
+		 * Hook: woocommerce_after_shop_loop_item.
+		 *
+		 * @hooked woocommerce_template_loop_product_link_close - 5
+		 * @hooked woocommerce_template_loop_add_to_cart - 10
+		 */
+		do_action( 'woocommerce_after_shop_loop_item' );
+		?>
+	</div>
 </li>
