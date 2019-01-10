@@ -113,6 +113,15 @@ function newcame_widgets_init() {
       'before_title'  => '<h2 class="widget-title">',
       'after_title'   => '</h2>',
   ) );
+  register_sidebar( array(
+      'name'          => esc_html__( 'Sidebar Shop', 'newcame' ),
+      'id'            => 'sidebar-shop',
+      'description'   => esc_html__( 'Add widgets here.', 'newcame' ),
+      'before_widget' => '<div id="%1$s" class="col-md-3 sidebar widget %2$s">',
+      'after_widget'  => '</div>',
+      'before_title'  => '<h2 class="widget-title">',
+      'after_title'   => '</h2>',
+  ) );
 }
 add_action( 'widgets_init', 'newcame_widgets_init' );
 
@@ -215,3 +224,47 @@ foreach($query_posts as $query_post){
 }
 add_action('wp_ajax_gallery_posts', 'gallery_posts');
 add_action('wp_ajax_nopriv_gallery_posts', 'gallery_posts');
+
+function the_breadcrumb() {
+    global $post;
+    echo '<ul id="breadcrumbs" class="breadcrumbs">';
+    if (!is_home()) {
+        echo '<li><a href="';
+        echo get_option('home');
+        echo '">';
+        echo 'Home';
+        echo '</a></li><li class="separator">/ </li>';
+        if (is_category() || is_single()) {
+            echo '<li>';
+            the_category(' </li> <li class="separator">/ </li><li> ');
+            if (is_single()) {
+                echo '</li> <li class="separator"> </li><li>';
+                the_title();
+                echo '</li>';
+            }
+        } elseif (is_page()) {
+            if($post->post_parent){
+                $anc = get_post_ancestors( $post->ID );
+                $title = get_the_title();
+                foreach ( $anc as $ancestor ) {
+                    $output = '<li><a href="'.get_permalink($ancestor).'" title="'.get_the_title($ancestor).'">'.get_the_title($ancestor).'</a></li> <li class="separator">/ </li>';
+                }
+                echo $output;
+                echo '<strong title="'.$title.'"> '.$title.'</strong>';
+            } else {
+                echo '<li><strong> '.get_the_title().'</strong></li>';
+            }
+        }
+    }
+    elseif (is_tag()) {single_tag_title();}
+    elseif (is_day()) {echo"<li>Archive for "; the_time('F jS, Y'); echo'</li>';}
+    elseif (is_month()) {echo"<li>Archive for "; the_time('F, Y'); echo'</li>';}
+    elseif (is_year()) {echo"<li>Archive for "; the_time('Y'); echo'</li>';}
+    elseif (is_author()) {echo"<li>Author Archive"; echo'</li>';}
+    elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {echo "<li>Blog Archives"; echo'</li>';}
+    elseif (is_search()) {echo"<li>Search Results"; echo'</li>';}
+    echo '</ul>';
+}
+
+require_once('aq_resizer.php');
+
